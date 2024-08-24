@@ -34,7 +34,7 @@ func ConvertRequest(ctx *fasthttp.RequestCtx, r *http.Request, forServer bool) e
 	r.ContentLength = int64(len(body))
 	r.RemoteAddr = ctx.RemoteAddr().String()
 	r.Host = b2s(ctx.Host())
-	r.TLS = ctx.TLSConnectionState()
+	//r.TLS = ctx.TLSConnectionState()
 	r.Body = io.NopCloser(bytes.NewReader(body))
 	r.URL = rURL
 
